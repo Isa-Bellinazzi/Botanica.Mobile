@@ -1,3 +1,5 @@
+import 'package:botanica_mobile/screens/home_consulta.dart';
+import 'package:botanica_mobile/themes/botanics_theme.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -5,11 +7,14 @@ void main() {
 }
 
 class MagnaBotanics extends StatelessWidget {
-  const MagnaBotanics({super.key});
+  const MagnaBotanics({Key? key}) : super(key: key);
 
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp();
-}
+    return MaterialApp(
+        title: 'Magna Botanic\'s', theme: myTheme, home: const HomeConsulta()
+        // Home(),
+        );
+  }
 }
