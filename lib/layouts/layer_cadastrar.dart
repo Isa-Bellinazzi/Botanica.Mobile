@@ -28,29 +28,34 @@ class LayerCadastrar extends StatelessWidget {
                     end: Alignment.bottomCenter,
                     colors: ColorsTheme.headerGradient),
               ),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  const FormCampoImagem(
-                    legenda: 'Inserir imagem da Planta:',
-                  ),
-                  FormCampoGrande(legenda: 'Nome da planta:', formKey: formKey),
-                  FormCampoGrande(legenda: 'Cor da planta:', formKey: formKey),
-                  const FormCampoMedio(legenda: 'Filo da planta:'),
-                  const FormCampoPequeno(legenda: 'Possui sementes?'),
-                  const FormCampoPequeno(legenda: 'Possui flores?'),
-                  const FormCampoPequeno(legenda: 'Possui frutas?'),
-                  const FormCampoMedio(legenda: 'Tipo de reprodução:'),
-                  const FormCampoMedio(legenda: 'Tipo de ambiente:'),
-                  const FormCampoPequeno(legenda: 'Possui vasos condutores?'),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
-                    children: [
-                      ButtonCancel(),
-                      ButtonSave(formKey: formKey), // Atualize esta linha
-                    ],
-                  ),
-                ],
+              child: Form(
+                key: formKey,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    const FormCampoImagem(
+                      legenda: 'Inserir imagem da Planta:',
+                    ),
+                    FormCampoGrande(
+                        legenda: 'Nome da planta:', formKey: formKey),
+                    FormCampoGrande(
+                        legenda: 'Cor da planta:', formKey: formKey),
+                    const FormCampoMedio(legenda: 'Filo da planta:'),
+                    const FormCampoPequeno(legenda: 'Possui sementes?'),
+                    const FormCampoPequeno(legenda: 'Possui flores?'),
+                    const FormCampoPequeno(legenda: 'Possui frutas?'),
+                    const FormCampoMedio(legenda: 'Tipo de reprodução:'),
+                    const FormCampoMedio(legenda: 'Tipo de ambiente:'),
+                    const FormCampoPequeno(legenda: 'Possui vasos condutores?'),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      children: [
+                        ButtonCancel(),
+                        ButtonSave(formKey: formKey), // Atualize esta linha
+                      ],
+                    ),
+                  ],
+                ),
               ),
             ),
           ],

@@ -36,12 +36,15 @@ class LayerAtualizar extends StatelessWidget {
                   const FormCampoImagem(
                     legenda: 'Inserir imagem da Planta:',
                   ),
-                  Column(
-                    children: const [
-                      FormCampoId(
-                        legenda: "Insira o ID do registro:",
-                      ),
-                    ],
+                  Form(
+                    key: formKey,
+                    child: Column(
+                      children: const [
+                        FormCampoId(
+                          legenda: "Insira o ID do registro:",
+                        ),
+                      ],
+                    ),
                   ),
                   const FormCampoMedio(legenda: 'Nome da Planta:'),
                   const FormCampoMedio(legenda: 'Cor da Planta:'),
