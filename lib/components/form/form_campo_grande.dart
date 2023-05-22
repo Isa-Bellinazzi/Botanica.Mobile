@@ -1,9 +1,37 @@
-import 'package:botanica_mobile/themes/colors_theme.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
-class FormCampoGrande extends StatelessWidget {
+class LetterOnlyTextFormatter extends TextInputFormatter {
+  @override
+  TextEditingValue formatEditUpdate(
+    TextEditingValue oldValue,
+    TextEditingValue newValue,
+  ) {
+    final newText = newValue.text.toUpperCase();
+    return TextEditingValue(
+      text: newText,
+      selection: newValue.selection.copyWith(
+        baseOffset: newText.length,
+        extentOffset: newText.length,
+      ),
+    );
+  }
+}
+
+class FormCampoGrande extends StatefulWidget {
   final String legenda;
-  const FormCampoGrande({super.key, required this.legenda});
+
+  const FormCampoGrande(
+      {Key? key, required this.legenda, required GlobalKey<FormState> formKey})
+      : super(key: key);
+
+  @override
+  _FormCampoGrandeState createState() => _FormCampoGrandeState();
+}
+
+class _FormCampoGrandeState extends State<FormCampoGrande> {
+  final formKey = GlobalKey<FormState>();
+  GlobalKey<FormState> get getFormKey => formKey;
 
   @override
   Widget build(BuildContext context) {
@@ -15,54 +43,51 @@ class FormCampoGrande extends StatelessWidget {
           Row(
             children: [
               Text(
-                legenda,
+                widget.legenda,
                 style: const TextStyle(
-                    fontSize: 16,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.black),
+                  fontSize: 16,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.black,
+                ),
               ),
               const Text(
                 ' *',
                 style: TextStyle(
-                    fontSize: 24,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.red),
+                  fontSize: 24,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.red,
+                ),
               ),
             ],
           ),
           Row(
             children: [
-              Container(
-                width: 200,
-                height: 40,
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: const BorderRadius.all(
-                    Radius.circular(15),
+              Form(
+                key: formKey,
+                child: Container(
+                  width: 190,
+                  height: 37,
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: const BorderRadius.all(
+                      Radius.circular(7),
+                    ),
+                    border: Border.all(width: 1, color: Colors.black),
                   ),
-                  border: Border.all(width: 1, color: Colors.black),
-                ),
-                child: TextFormField(
-                  keyboardType: TextInputType.name,
-                  textAlign: TextAlign.center,
-                  decoration: const InputDecoration(
-                    border: InputBorder.none,
+                  child: TextFormField(
+                    inputFormatters: [
+                      FilteringTextInputFormatter.singleLineFormatter,
+                      FilteringTextInputFormatter.allow(RegExp(r'[a-zA-Z]')),
+                      LetterOnlyTextFormatter(),
+                    ],
+                    decoration: const InputDecoration(border: InputBorder.none),
+                    validator: (String? value) {
+                      if (value == null || value.isEmpty) {
+                        return 'O campo ${widget.legenda} é obrigatório';
+                      }
+                      return null;
+                    },
                   ),
-                ),
-              ),
-              const SizedBox(
-                width: 20,
-              ),
-              ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: ColorsTheme.contrast,
-                  side: const BorderSide(
-                    width: 1.0,
-                  ), // Background color
-                ),
-                onPressed: () {},
-                child: const Icon(
-                  Icons.search_outlined,
                 ),
               ),
             ],

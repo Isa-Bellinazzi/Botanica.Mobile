@@ -1,5 +1,5 @@
 import 'package:botanica_mobile/components/box_card_consulta.dart';
-import 'package:botanica_mobile/components/buttons/bottom_voltar.dart';
+import 'package:botanica_mobile/components/buttons/button_return.dart';
 import 'package:flutter/material.dart';
 import '../themes/colors_theme.dart';
 
@@ -41,7 +41,7 @@ class HomeConsulta extends StatelessWidget {
             legenda:
                 '\n • Consulta todos os registro de plantas cadastradass, \n trazendo os seguintes dados: \n - Data e Hora que o registro foi feito \n - O usuário que cadastrou \n - Nome,cor,filo, e os demais \n aspectos da Planta ',
           ),
-          BottomVoltar(),
+          ButtonReturn(),
           SizedBox(
             height: 80,
           )

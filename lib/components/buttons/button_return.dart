@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:botanica_mobile/themes/colors_theme.dart';
 
-import '../../screens/home.dart';
-
-class BottomSave extends StatelessWidget {
-  const BottomSave({super.key});
+class ButtonReturn extends StatelessWidget {
+  const ButtonReturn({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -12,14 +11,15 @@ class BottomSave extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         ElevatedButton(
+          style: ElevatedButton.styleFrom(
+            backgroundColor: ColorsTheme.contrast,
+            side: const BorderSide(width: 1.0), // Border color
+          ),
           onPressed: () {
-            Navigator.pushReplacement(
-              context,
-              MaterialPageRoute(builder: (context) => const Home()),
-            );
+            Navigator.pop(context);
           },
           child: const Text(
-            "Salvar",
+            "Voltar",
             style: TextStyle(fontSize: 16),
           ),
         ),

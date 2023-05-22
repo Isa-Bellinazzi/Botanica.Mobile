@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import '../components/buttons/bottom_cancel.dart';
-import '../components/buttons/bottom_excluir.dart';
+import '../components/buttons/button_cancel.dart';
+import '../components/buttons/button_delete.dart';
 import '../components/form/form_campo_grande_consulta.dart';
 import '../components/form/form_campo_id.dart';
 import '../components/form/form_campo_imagem_consulta.dart';
@@ -18,13 +18,12 @@ class LayerExcluir extends StatelessWidget {
         children: [
           Container(
             width: 360,
-            height: 1100,
+            height: 1200,
             decoration: const BoxDecoration(
               gradient: LinearGradient(
                   begin: Alignment.topCenter,
                   end: Alignment.bottomCenter,
                   colors: ColorsTheme.headerGradient),
-              borderRadius: BorderRadius.all(Radius.circular(10)),
             ),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -57,25 +56,24 @@ class LayerExcluir extends StatelessWidget {
                       border: Border.all(width: 1, color: Colors.black),
                     ),
                     child: Column(
-                      children: [
-                        const FormCampoImagemConsulta(legenda: 'Imagem:'),
-                        const FormCampoGrandeConsulta(legenda: 'Nome:'),
-                        const FormCampoPequenoConsulta(legenda: 'Cor:'),
-                        const FormCampoGrandeConsulta(legenda: 'Filo:'),
-                        const FormCampoPequenoConsulta(legenda: 'Sementes:'),
-                        const FormCampoPequenoConsulta(legenda: 'Flores:'),
-                        const FormCampoPequenoConsulta(legenda: 'Frutas:'),
-                        const FormCampoGrandeConsulta(legenda: 'Reprodução:'),
-                        const FormCampoGrandeConsulta(legenda: 'Ambiente:'),
-                        const FormCampoPequenoConsulta(
-                            legenda: 'Vasos Condutores:'),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceAround,
-                          children: const [BottomCancel(), BottomExcluir()],
-                        ),
+                      children: const [
+                        FormCampoImagemConsulta(legenda: 'Imagem:'),
+                        FormCampoGrandeConsulta(legenda: 'Nome:'),
+                        FormCampoPequenoConsulta(legenda: 'Cor:'),
+                        FormCampoGrandeConsulta(legenda: 'Filo:'),
+                        FormCampoPequenoConsulta(legenda: 'Sementes:'),
+                        FormCampoPequenoConsulta(legenda: 'Flores:'),
+                        FormCampoPequenoConsulta(legenda: 'Frutas:'),
+                        FormCampoGrandeConsulta(legenda: 'Reprodução:'),
+                        FormCampoGrandeConsulta(legenda: 'Ambiente:'),
+                        FormCampoPequenoConsulta(legenda: 'Vasos Condutores:'),
                       ],
                     ),
                   ),
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: const [ButtonCancel(), ButtonExcluir()],
                 ),
               ],
             ),

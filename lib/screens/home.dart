@@ -27,10 +27,6 @@ class Home extends StatelessWidget {
               functionBottom: 'Realizar Consulta',
               image: 'assets/images/Consultar.png'),
           BoxCard(
-              endpoint: 'Relatório',
-              functionBottom: 'Análisar Gráficos',
-              image: 'assets/images/Relatorio.png'),
-          BoxCard(
               endpoint: 'Excluir',
               functionBottom: 'Realizar Exclusão',
               image: 'assets/images/Excluir.png'),

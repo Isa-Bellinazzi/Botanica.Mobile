@@ -1,4 +1,4 @@
-import 'package:botanica_mobile/components/buttons/bottom_endpoints.dart';
+import 'package:botanica_mobile/components/buttons/button_endpoints.dart';
 import 'package:botanica_mobile/themes/colors_theme.dart';
 import 'package:flutter/material.dart';
 
@@ -65,7 +65,7 @@ class BoxCardConsulta extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
-                  BottomEndpoints(functionBottom: functionBottom),
+                  ButtonEndpoints(functionBottom: functionBottom),
                 ],
               ),
             ],

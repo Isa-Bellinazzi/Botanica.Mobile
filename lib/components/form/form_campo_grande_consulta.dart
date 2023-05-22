@@ -30,7 +30,7 @@ class FormCampoPequenoConsulta extends StatelessWidget {
                 decoration: BoxDecoration(
                   color: Colors.white,
                   borderRadius: const BorderRadius.all(
-                    Radius.circular(15),
+                    Radius.circular(7),
                   ),
                   border: Border.all(width: 1, color: Colors.black),
                 ),
@@ -41,6 +41,11 @@ class FormCampoPequenoConsulta extends StatelessWidget {
                   decoration: const InputDecoration(
                     border: InputBorder.none,
                   ),
+                  validator: (String? value) {
+                    return (value != null && value.contains('@,1'))
+                        ? 'Nesse campo é permitido letras'
+                        : null;
+                  },
                 ),
               ),
               const SizedBox(

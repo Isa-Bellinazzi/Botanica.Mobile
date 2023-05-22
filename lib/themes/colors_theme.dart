@@ -11,4 +11,6 @@ class ColorsTheme {
   static const backgroundCard = Color.fromRGBO(133, 240, 145, 1);
   static const backgroundAppbar = Color.fromARGB(255, 51, 153, 58);
   static const contrast = Color.fromARGB(255, 124, 77, 255);
+  static const alert = Color.fromARGB(255, 246, 42, 23);
+  static const borderButtons = Color.fromRGBO(0, 0, 0, 1);
 }

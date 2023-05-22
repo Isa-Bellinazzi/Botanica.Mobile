@@ -16,7 +16,7 @@ class FormAtualizar extends StatelessWidget {
         title: const Text('Atualização de registro por id'),
       ),
       body: ListView(
-        children: const [Center(child: LayerAtualizar())],
+        children: [Center(child: LayerAtualizar())],
       ),
     );
   }

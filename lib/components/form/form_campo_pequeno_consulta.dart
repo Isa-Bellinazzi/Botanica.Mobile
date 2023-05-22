@@ -30,7 +30,7 @@ class FormCampoGrandeConsulta extends StatelessWidget {
                 decoration: BoxDecoration(
                   color: Colors.white,
                   borderRadius: const BorderRadius.all(
-                    Radius.circular(15),
+                    Radius.circular(7),
                   ),
                   border: Border.all(width: 1, color: Colors.black),
                 ),

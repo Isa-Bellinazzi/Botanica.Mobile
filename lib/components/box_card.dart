@@ -1,4 +1,4 @@
-import 'package:botanica_mobile/components/buttons/bottom_endpoints.dart';
+import 'package:botanica_mobile/components/buttons/button_endpoints.dart';
 import 'package:botanica_mobile/themes/colors_theme.dart';
 import 'package:flutter/material.dart';
 
@@ -41,7 +41,7 @@ class BoxCard extends StatelessWidget {
                     style: const TextStyle(
                         fontSize: 24, fontWeight: FontWeight.bold),
                   ),
-                  BottomEndpoints(functionBottom: functionBottom)
+                  ButtonEndpoints(functionBottom: functionBottom)
                 ],
               ),
               Row(crossAxisAlignment: CrossAxisAlignment.start, children: [
